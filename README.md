@@ -9,3 +9,5 @@ Live goals
     d. Kinetics of a folding path (number of runs, RSA, etc.)
     d. Sequence of folding paths? Longest common substring?
 3. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation).
+
+Good article on viterbi: https://www.sciencedirect.com/topics/mathematics/viterbi-algorithm#:~:text=A%20Viterbi%20algorithm%20is%20a,Technology%20(Third%20Edition)%2C%202003
