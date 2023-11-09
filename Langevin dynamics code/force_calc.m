@@ -1,7 +1,7 @@
 % Calculate forces for MD, returns a three item row vector containing
 % forces for i and j
 % Requires the function files MIC and lennard_force
-function forces = force_calc(coords)
+function forces = force_calc(coords, is_hydrophil)
 % Initialize matrix of the same size as the positions
 [num_particles, dim] = size(coords);
 forces = zeros(num_particles,dim);
@@ -9,7 +9,7 @@ forces = zeros(num_particles,dim);
 sigma = 1;
 
 % Array that shows whether the particle is hydrophilic or hydrophobic
-is_hydrophil = [true;false;false;true;true];
+%is_hydrophil = [true;false;false;true;true];
 
 %% Calculate total config force due to 1)lennard jones 2)harmonic bonded 
 for i = 1:num_particles
