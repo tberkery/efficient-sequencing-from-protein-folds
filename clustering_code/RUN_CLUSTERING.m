@@ -3,11 +3,13 @@
 
 
 %% Problem 3
+
+% Load x y z position data over a range of time points
 load Xvstime.dat
 load Yvstime.dat
 load Zvstime.dat
 
-%% 3a)
+%% 3a) Calculate distances
 
 xs = Xvstime;
 ys = Yvstime;
@@ -33,7 +35,23 @@ writematrix(distances, "Residue_distances_over_time.csv");
 %% 3b) Clustering
 
 [clusters,centers] = kmeans(distances,6,'MaxIter', 200);
-%% 
+
+clusters
+
+% Write clusters to file
+fileID = fopen('cluster_seq.txt', 'w');
+if fileID == -1
+    error('Cannot open file for writing.');
+end
+
+% Define the format for printing each element of the matrix
+formatSpec = '%d\n';
+
+% Print the matrix to the file
+fprintf(fileID, formatSpec, clusters);
+
+% Close the file
+fclose(fileID);
 
 %% 3c) Transition matrix
 

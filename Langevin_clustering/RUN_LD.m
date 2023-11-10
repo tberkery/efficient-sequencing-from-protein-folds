@@ -17,6 +17,8 @@ clust_means = ones(1,7); % placeholder
 %% 4) RUN LD SIMULATION HERE
 % running LD with T=2, dt=0.003, steps = 10,000 (need to change)
 [times, potentials, kinetics, temperatures, equilibrium_pos, clusters] = LD(init_pos, is_hydrophil, 1, 0.003, 10000, clust_means);
+
+%% 5) Print clusters
 clusters
 
 %% PLOT RESULTS HERE
