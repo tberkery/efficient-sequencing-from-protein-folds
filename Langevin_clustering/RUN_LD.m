@@ -2,22 +2,22 @@
 clc; clear;
 %rng(5)
 
-%% 1) PUT IN INITIAL COORDINATES HERE
+%% 1) INITIAL COORDINATES TO EQUILIBRATE, AND SIMULATION PARAMETERS
 %init_pos = [0,0,1; 0,0,2; 0,0,3; 0,0,4; 0,0,5];
 seed_pos = [0,0,1; 0,0,2; 0,0,3; 0,0,4; 0,0,5; 0,0,6; 0,0,7; 0,0,8; 0,0,9; 0,0,10; 0,0,11; 0,0,12; 0,0,13; 0,0,14];
 num_clusters = 6; % expected number of clusters for the protein
-steps_equilibrate = 10^4;
+steps_equilibration = 10^4;
 steps_msm = 10^4;
 steps_sim = steps_msm*10^2;
 
-%% 2) PUT IN THE H-P COARSE GRAINING HERE 
+%% 2) H-P COARSE-GRAINING INFO 
 % H is hydrophobic (true), P is polar (false)
 %is_hydrophil = [true;false;false;true;true];
 is_hydrophil = [false;false;false;true;true; true;false;false; true; true; true; false; false; false];
 
 %% 3 EQUILIBRATE HP CHAIN WITH LD
 [coords_equilibration, times_equilibration, potentials_equilibration, kinetics_equilibration, temperatures_equilibration] = ...
-    LD_to_coords(seed_pos, is_hydrophil, 1, 0.003, steps_msm);
+    LD_to_coords(seed_pos, is_hydrophil, 1, 0.003, steps_equilibration);
 
 %% 4) RUN EQUILIBRATED LD FOR THE MSM, AND FIND CLUSTER MEANS
 init_pos = coords_equilibration(:,:,1);
@@ -31,7 +31,7 @@ simStart_pos = coords_v_time(:,:,1);
 
 %% 6) Write clusters to a sequence file
 %clusters
-report_clusters(clusters, "sequence.csv", NaN);
+report_clusters(clusters, "sequence.txt", NaN);
 
 %% PLOT RESULTS HERE
 int_energies = kinetics + potentials;
