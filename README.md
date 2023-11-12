@@ -11,3 +11,10 @@ Live goals
 2. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation).
 
 Good article on viterbi: https://www.sciencedirect.com/topics/mathematics/viterbi-algorithm#:~:text=A%20Viterbi%20algorithm%20is%20a,Technology%20(Third%20Edition)%2C%202003
+
+
+TODO:
+1. Try existing: BWT-HMM --> produce the index, run some queries? Also, analyze time and space
+2. Viterbi (existing; also look at implementation into Wheeler-HMM or Viterbi design)? --> Make the algorithm and explain it in clear slides; analysis of time and space and why it is better for our sequence
+3. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation). Rank-select-access (but how do we improve on existing?)
+4. nothing worked and we try some of the small points in "Live goals"
