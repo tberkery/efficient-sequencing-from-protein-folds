@@ -23,6 +23,9 @@ n_states = 4  # Example value
 
 # Initialize the HMM
 model = hmm.MultinomialHMM(n_components=n_states)
+model.startprob_ = np.array([1.0 / n_states] for i in range(n_states)) # initially assume equal probability of each state
+model.transmat_ = np.array([[1.0 / n_states**2] for i in range(n_states)] for j in range(n_states))
+
 
 # The data needs to be in a specific format for hmmlearn, usually as a 2D numpy array
 # Here, each number is considered a separate observation
@@ -35,3 +38,4 @@ observed_data = np.array([[int(x)] for x in bwt_result if x.isdigit()])
 model.fit(observed_data)
 
 # After training, this model can be used to predict states or evaluate new observations
+print(model)
