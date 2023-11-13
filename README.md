@@ -15,6 +15,11 @@ Good article on viterbi: https://www.sciencedirect.com/topics/mathematics/viterb
 
 TODO:
 1. Try existing: BWT-HMM --> produce the index, run some queries? Also, analyze time and space
-2. Viterbi (existing; also look at implementation into Wheeler-HMM or Viterbi design)? --> Make the algorithm and explain it in clear slides; analysis of time and space and why it is better for our sequence
+2. Viterbi (existing; also look at implementation into Viterbi design or Wheeler)? --> Make the algorithm and explain it in clear slides; analysis of time and space and why it is better for our sequence
 3. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation). Rank-select-access (but how do we improve on existing?)
 4. nothing worked and we try some of the small points in "Live goals"
+
+
+TODO Task 2 (Viterbi, Lily and Richard):
+1. quick generic program to compress and track runs (AAAABBCCC --> text is 'ABC', runs = [4, 2, 3]): Lily
+2. MLSD Viterbi idea (our new-ish method) to propose the folding paths (queries): Richard
