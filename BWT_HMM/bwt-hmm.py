@@ -8,6 +8,7 @@ with open(sys.argv[1], "r") as fp:
         seq += line.rstrip("\n")
 
 # when running on test.txt sequence input, gets killed on Amazon EC2 t3.2xlarge instance
+seq = seq[0:100000] # try on just first 100,000 characters to see if we can benchmark
 
 def burrows_wheeler_transform(s):
     """ Apply Burrows-Wheeler Transform to a given string. """
@@ -23,8 +24,6 @@ def burrows_wheeler_transform(s):
 example_data = seq #"123456123456123456123456123456123456123456123456"
 # Apply BWT to the example data
 bwt_result = burrows_wheeler_transform(example_data)
-print(bwt_result)
-print(type(bwt_result))
 
 # Since we're dealing with discrete data (numbers 1 to 6), we use a Multinomial HMM
 # Number of states in the HMM needs to be defined. This requires domain knowledge or experimentation.
@@ -33,8 +32,8 @@ n_states = 4  # Example value
 # Initialize the HMM
 model = hmm.MultinomialHMM(n_components=n_states)
 start_probs = np.full(n_states, 1.0 / n_states)  # initially assume equal probability of each state
-transmat_probs = np.full((n_states, n_states), 1.0 / n_states**2)
-model.set_params(startprob_prior = start_probs, transmat_prior = transmat_probs)
+#transmat_probs = np.full((n_states, n_states), 1.0 / n_states**2)
+#model.set_params(startprob_prior = start_probs, transmat_prior = transmat_probs)
 
 # The data needs to be in a specific format for hmmlearn, usually as a 2D numpy array
 # Here, each number is considered a separate observation
