@@ -1,5 +1,11 @@
 from hmmlearn import hmm
 import numpy as np
+import sys
+
+seq = ""
+with open(sys.argv[1], "r") as fp:
+    for line in fp.readlines():
+        seq += line.rstrip("\n")
 
 def burrows_wheeler_transform(s):
     """ Apply Burrows-Wheeler Transform to a given string. """
@@ -12,7 +18,7 @@ def burrows_wheeler_transform(s):
     return last_column
 
 # Example protein conformation data as a string of numbers from 1 to 6
-example_data = "123456123456123456123456123456123456123456123456"
+example_data = seq #"123456123456123456123456123456123456123456123456"
 # Apply BWT to the example data
 bwt_result = burrows_wheeler_transform(example_data)
 print(bwt_result)
