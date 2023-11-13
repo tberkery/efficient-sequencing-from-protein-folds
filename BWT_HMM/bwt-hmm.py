@@ -33,6 +33,9 @@ n_states = 4  # Example value
 model = hmm.MultinomialHMM(n_components=n_states)
 start_probs = np.full(n_states, 1.0 / n_states)  # initially assume equal probability of each state
 transmat_probs = np.full((n_states, n_states), 1.0 / n_states**2)
+emission_probs = np.full(n_states, 1.0 / n_states)  # initially assume equal probability of each state
+# note that at the present these initial prob states are not used and never passed into the model despite being declared
+
 #model.set_params(startprob_ = start_probs, transmat_ = transmat_probs)
 
 # The data needs to be in a specific format for hmmlearn, usually as a 2D numpy array
@@ -57,6 +60,6 @@ observed_sequence = np.array([[1, 2, 3, 4, 5]])
 # observed_sequence = np.array([[1, 2, 3, 4, 5]])
 # log_probability = model.score(observed_sequence)
 # print("Log Probability of the Observed Sequence:", log_probability)
-generated_data, hidden_states = model.sample(n_samples=10)
-print("Generated Data:", generated_data)
-print("Corresponding Hidden States:", hidden_states)
+#generated_data, hidden_states = model.sample(n_samples=10)
+#print("Generated Data:", generated_data)
+#print("Corresponding Hidden States:", hidden_states)
