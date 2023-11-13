@@ -32,8 +32,8 @@ n_states = 4  # Example value
 # Initialize the HMM
 model = hmm.MultinomialHMM(n_components=n_states)
 start_probs = np.full(n_states, 1.0 / n_states)  # initially assume equal probability of each state
-#transmat_probs = np.full((n_states, n_states), 1.0 / n_states**2)
-#model.set_params(startprob_prior = start_probs, transmat_prior = transmat_probs)
+transmat_probs = np.full((n_states, n_states), 1.0 / n_states**2)
+#model.set_params(startprob_ = start_probs, transmat_ = transmat_probs)
 
 # The data needs to be in a specific format for hmmlearn, usually as a 2D numpy array
 # Here, each number is considered a separate observation
@@ -48,4 +48,15 @@ model.fit(observed_data) # fits behind-the-scenes using EM algorithm.
 
 # After training, this model can be used to predict states or evaluate new observations
 print(model)
-print(model.transmat_prior)
+print("Transition Matrix:\n", model.transmat_)
+print("Emission Probabilities:\n", model.emissionprob_)
+print("Initial State Probabilities:\n", model.startprob_)
+observed_sequence = np.array([[1, 2, 3, 4, 5]])
+# predicted_states = model.predict(observed_sequence)
+# print("Predicted Hidden States:", predicted_states)
+# observed_sequence = np.array([[1, 2, 3, 4, 5]])
+# log_probability = model.score(observed_sequence)
+# print("Log Probability of the Observed Sequence:", log_probability)
+generated_data, hidden_states = model.sample(n_samples=10)
+print("Generated Data:", generated_data)
+print("Corresponding Hidden States:", hidden_states)
