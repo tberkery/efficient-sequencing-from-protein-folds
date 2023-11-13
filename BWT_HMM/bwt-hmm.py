@@ -7,6 +7,8 @@ with open(sys.argv[1], "r") as fp:
     for line in fp.readlines():
         seq += line.rstrip("\n")
 
+# when running on test.txt sequence input, gets killed on Amazon EC2 t3.2xlarge instance
+
 def burrows_wheeler_transform(s):
     """ Apply Burrows-Wheeler Transform to a given string. """
     # Append a unique symbol to the end of the string to mark its end
