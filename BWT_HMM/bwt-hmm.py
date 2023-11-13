@@ -14,8 +14,9 @@ def burrows_wheeler_transform(s):
 # Example protein conformation data as a string of numbers from 1 to 6
 example_data = "123456123456"
 # Apply BWT to the example data
-bwt_result = burrows_wheeler_transform(example_data)
-bwt_result
+bwt_result = np.array(burrows_wheeler_transform(example_data))
+print(bwt_result)
+print(type(bwt_result))
 
 # Since we're dealing with discrete data (numbers 1 to 6), we use a Multinomial HMM
 # Number of states in the HMM needs to be defined. This requires domain knowledge or experimentation.
@@ -35,7 +36,7 @@ observed_data = np.array([[int(x)] for x in bwt_result if x.isdigit()])
 # Training the model (this requires actual data and might need to adjust the parameters)
 # For demonstration, I am just using the observed_data for training, but in practice,
 # you'd train this on a larger, representative dataset
-model.fit(observed_data)
+model.fit(observed_data) # fits behind-the-scenes using EM algorithm.
 
 # After training, this model can be used to predict states or evaluate new observations
 print(model)
