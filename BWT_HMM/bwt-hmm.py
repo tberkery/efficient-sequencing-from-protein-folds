@@ -12,7 +12,7 @@ def burrows_wheeler_transform(s):
     return last_column
 
 # Example protein conformation data as a string of numbers from 1 to 6
-example_data = "123456123456"
+example_data = "123456123456123456123456123456123456123456123456"
 # Apply BWT to the example data
 bwt_result = burrows_wheeler_transform(example_data)
 print(bwt_result)
