@@ -48,3 +48,4 @@ model.fit(observed_data) # fits behind-the-scenes using EM algorithm.
 
 # After training, this model can be used to predict states or evaluate new observations
 print(model)
+print(model.transmat_prior)
