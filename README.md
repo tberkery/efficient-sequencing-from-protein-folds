@@ -1,6 +1,8 @@
 # genomics-sequences-final-project
 Final project for Computational Genomics: Sequences
 
+test sequences: https://drive.google.com/drive/folders/1RavGzAAF8eBSy4HMB-JbUeWhOO3oZMbM?usp=sharing 
+
 Live goals
 1. What are the common folding paths; querying them, counts, etc.?
     a. Find kth order probabilities, build HMM/Viterbi? Wheeler-HMM variation of BWT-HMM?
