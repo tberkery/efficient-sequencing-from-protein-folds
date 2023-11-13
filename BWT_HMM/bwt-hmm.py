@@ -32,6 +32,7 @@ model.set_params(startprob_prior = start_probs, transmat_prior = transmat_probs)
 # Here, each number is considered a separate observation
 # For example, '66$1122334455' becomes [[6], [6], [1], [1], [2], [2], [3], [3], [4], [4], [5], [5]]
 observed_data = np.array([[int(x)] for x in bwt_result if x.isdigit()]) # Note that $ get filtered out
+print("Data provided to HMM:", observed_data)
 
 # Training the model (this requires actual data and might need to adjust the parameters)
 # For demonstration, I am just using the observed_data for training, but in practice,
