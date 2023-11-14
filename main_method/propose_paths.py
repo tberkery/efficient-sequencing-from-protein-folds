@@ -32,16 +32,16 @@ def compress_sequence(fileName):
             shortSeq = shortSeq + seq[i]
             runLengths.append(1)
             j += 1
-    
-    return shortSeq, runLengths
+    len_seq = j
+    return shortSeq, runLengths, len_seq
 
 """
 Propose the n most frequent sequence paths of <= k length. 
 """
 class MLSE_Propose:
-    def __init__(self, seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+    def __init__(self, seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
         self.seq = seq
-        self.len_seq = len(seq)
+        self.len_seq = len_seq
         self.num_proposals = num_proposals
         self.max_path_len = max_path_len
         self.sep = sep # char separator for node/edge labels
@@ -215,7 +215,7 @@ class MLSE_Propose:
         self.proposals = self.propose_n(n=self.num_proposals, min_walks=0.5*self.len_graph)
         
         if self.verbose:
-            report()
+            self.report()
 
 """
 Use networkx functionality to make a simple visualization of what our graphs look like
@@ -230,13 +230,25 @@ class MLSE_Plot:
         
         self.G = None
         self.visualize_viterbi()
-    
+        
     def add_edge_flow(self, u, v, new_flow=1):
         if self.G.has_edge(u, v):
             self.G[u][v]['capacity'] += new_flow
         else:
             self.G.add_edge(u, v, capacity=new_flow)
         return
+
+    def add_path_flow(self, path, new_flow, create:bool):
+        len_path = len(path)
+        for idx in range(len_path-1):
+            u = path[idx]
+            v = path[idx+1]
+
+            if not create and not self.G.has_edge(u, v):
+                raise ValueError("Cannot add path flow, as an edge does not exist and create=False is specified")
+            print('prev capacity:', G[u][v]['capacity'], end=';')
+            self.add_edge_flow(u, v, new_flow=new_flow)
+            print('new capacity:', self.G[u][v]['capacity'])
 
     def decode_path(self, path, sep='_', keep_ends=True):
         len_path = len(path)
@@ -253,45 +265,54 @@ class MLSE_Plot:
             return seq
         return seq[1:len_path-1-1]
 
-    """
-    Simple visualization of our Viterbi MLSE graph (sanity check and 
-    for seeing the size of the graph, number of edges, etc.)
-    """
-    def visualize_viterbi(self, source_node='s', sink_node='t'):
+    def get_heavy_path(self, source, target):
+        flow_value, flow_dict = nx.maximum_flow(self.G, source, target)
+        # Find the path with maximum flow
+        path = nx.shortest_path(self.G, source=source, target=target, weight='capacity')
+        return flow_value, path
+
+    def visualize_viterbi(self, source_node='s', sink_node='t', visualize=True):
+        # CREATE FLOW GRAPH
         self.G = nx.DiGraph()
 
-        for idx in range(0, self.len_seq - self.max_path_len + 1): #self.max_path_len):
+        for idx in range(0, self.len_seq - self.max_path_len + 1): #max_path_len):
             # add the sliding window as a path
             self.add_edge_flow(source_node, self.seq[idx] + self.sep + str(0)) # source to first node
-        for path_offset in range(0, self.max_path_len-1): # second to penultimate
-            u = self.seq[idx + path_offset] + self.sep + str(path_offset)
-            v = self.seq[idx + path_offset + 1] + self.sep + str(path_offset+1)
-            self.add_edge_flow(u, v)
+            for path_offset in range(0, self.max_path_len-1): # second to penultimate
+                u = self.seq[idx + path_offset] + self.sep + str(path_offset)
+                v = self.seq[idx + path_offset + 1] + self.sep + str(path_offset+1)
+                self.add_edge_flow(u, v)
+            
+            self.add_edge_flow(self.seq[idx + self.max_path_len-1] + self.sep + str(self.max_path_len-1), sink_node) # source to first node
         
-        self.add_edge_flow(self.seq[idx + self.max_path_len-1] + self.sep + str(self.max_path_len-1), sink_node) # source to first node
-    
-        for layer, nodes in enumerate(nx.topological_generations(self.G)):
-            # `multipartite_layout` expects the layer as a node attribute, so add the
-            # numeric layer value as a node attribute
-            for node in nodes:
-                self.G.nodes[node]["layer"] = layer
-        pos = nx.multipartite_layout(self.G, subset_key="layer")
-        fig, ax = plt.subplots()
-        nx.draw_networkx(self.G, pos=pos, ax=ax)
-        ax.set_title("DAG layout in topological order")
-        fig.tight_layout()
-        plt.show()
-        return
+        # IF SPECIFIED, VISUALIZE GRAPH
+        if visualize:
+            for layer, nodes in enumerate(nx.topological_generations(self.G)):
+                # `multipartite_layout` expects the layer as a node attribute, so add the
+                # numeric layer value as a node attribute
+                for node in nodes:
+                    self.G.nodes[node]["layer"] = layer
+            pos = nx.multipartite_layout(self.G, subset_key="layer")
+            fig, ax = plt.subplots()
+            nx.draw_networkx(self.G, pos=pos, ax=ax)
+            ax.set_title("DAG layout in topological order")
+            fig.tight_layout()
+            plt.show()
+
+
+def query_seq_file(filepath_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+    seq, runs, len_seq = compress_sequence(filepath_seq)
+    return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
+
 
 def main():
-    seq = 'abcdefabcdefefefefefefefefefabcdefgzzzzz'
-    len_seq = len(seq)
-    sep = '_'
-    num_proposals = 3
-    max_path_len = 8
+    seq, runs, len_seq = compress_sequence('../Langevin_clustering/sequence.txt') #'abcdefgh' #'abcdefabcdefefefefefefefefefabcdefgzzzzz'
+    #len_seq = len(seq)
+    num_proposals = 10
+    max_path_len = 10
 
     plotter = MLSE_Plot(seq, num_proposals, max_path_len)
-    
+    proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
     return
 
 if __name__ == '__main__':
