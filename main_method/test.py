@@ -49,8 +49,9 @@ def max_flow(source_node='s', sink_node='t', visualize=False):
     sep = '_'
     num_proposals = 3
     max_path_len = 8
+    slide = 1
 
-    for idx in range(0, len_seq - max_path_len + 1, max_path_len):
+    for idx in range(0, len_seq - max_path_len + 1): #max_path_len):
         # add the sliding window as a path
         add_edge_flow(G, source_node, seq[idx] + sep + str(0)) # source to first node
         for path_offset in range(0, max_path_len-1): # second to penultimate
