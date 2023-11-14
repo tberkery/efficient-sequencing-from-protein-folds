@@ -48,7 +48,7 @@ sample_functions = [get_sample_sequence, get_smaller_sequence] # now define any 
 
 sample_function_descriptors = ["hypothetical_protein_test", "compressed_hypothetical_protein_test"] # write appropriate names describing example sequences to test here
 data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi"] # write appropriate names describing data structures to profile here
-num_iterations = 1 # set number of times to run each unique sample sequence/data structure combination
+num_iterations = 50 # set number of times to run each unique sample sequence/data structure combination
 
 results = pd.DataFrame(columns = ["data_structure", "sample", "iteration", "user", "runtime"])
 sample_counter = 0
