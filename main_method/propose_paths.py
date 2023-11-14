@@ -308,13 +308,18 @@ def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
 def main():
+    import os, psutil
+    process = psutil.Process()
     seq, runs, len_seq = compress_runs('../Langevin_clustering/sequence.txt') #'abcdefgh' #'abcdefabcdefefefefefefefefefabcdefgzzzzz'
+    print("Cumulative memory:", process.memory_info().rss)
     #len_seq = len(seq)
     num_proposals = 10
-    max_path_len = 10
+    max_path_len = 5
 
     plotter = MLSE_Plot(seq, num_proposals, max_path_len)
     proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+
+    print("Cumulative memory:", process.memory_info().rss)
     return
 
 if __name__ == '__main__':
