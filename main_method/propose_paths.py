@@ -15,7 +15,7 @@ Return:
     shortSeq - the compressed sequence; "AAABBC" --> "ABC"
     runLengths - the runs indexed to shortSeq; "ABC" --> [3,2,1]
 """
-def compress_sequence(fileName):
+def compress_runs(fileName):
     seq = ""
     with open(fileName, 'r') as ifile:
         for line in ifile:
@@ -301,12 +301,14 @@ class MLSE_Plot:
 
 
 def query_seq_file(filepath_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-    seq, runs, len_seq = compress_sequence(filepath_seq)
+    seq, runs, len_seq = compress_runs(filepath_seq)
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
+def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+    return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
 def main():
-    seq, runs, len_seq = compress_sequence('../Langevin_clustering/sequence.txt') #'abcdefgh' #'abcdefabcdefefefefefefefefefabcdefgzzzzz'
+    seq, runs, len_seq = compress_runs('../Langevin_clustering/sequence.txt') #'abcdefgh' #'abcdefabcdefefefefefefefefefabcdefgzzzzz'
     #len_seq = len(seq)
     num_proposals = 10
     max_path_len = 10
