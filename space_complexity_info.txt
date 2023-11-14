@@ -2,17 +2,55 @@ Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
 
 Line #    Mem usage    Increment  Occurrences   Line Contents
 =============================================================
-    30    113.7 MiB    113.7 MiB           1   @profile
-    31                                         def bwt_hmm_with_space_annotation(seq):
-    32    131.2 MiB     17.4 MiB           1       bwt_hmm(seq)
+    35    144.1 MiB    144.1 MiB           1   @profile
+    36                                         def bwt_hmm_with_space_annotation(seq):
+    37    160.0 MiB     15.9 MiB           1       bwt_hmm(seq)
+
+
+proposal	exact_matches
+4444444444	32238
+5555555555	26289
+2222222222	15906
+1111111111	10979
+3333333333	10069
+6666666666	4141
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    39    160.4 MiB    160.4 MiB           1   @profile
+    40                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    41    160.4 MiB      0.0 MiB           1       len_seq = len(seq)
+    42    160.4 MiB      0.0 MiB           1       query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=True)
 
 
 Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
 
 Line #    Mem usage    Increment  Occurrences   Line Contents
 =============================================================
-    30    133.1 MiB    133.1 MiB           1   @profile
-    31                                         def bwt_hmm_with_space_annotation(seq):
-    32    129.8 MiB     -3.3 MiB           1       bwt_hmm(seq)
+    35    162.0 MiB    162.0 MiB           1   @profile
+    36                                         def bwt_hmm_with_space_annotation(seq):
+    37    158.8 MiB     -3.2 MiB           1       bwt_hmm(seq)
+
+
+proposal	exact_matches
+4343434345	326
+3434343434	322
+5454545452	300
+2525454543	293
+5252525254	272
+4545252525	267
+2121212121	231
+1212121212	231
+4242424241	179
+2424242424	164
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    39    160.5 MiB    160.5 MiB           1   @profile
+    40                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    41    160.5 MiB      0.0 MiB           1       len_seq = len(seq)
+    42    160.5 MiB      0.0 MiB           1       query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=True)
 
 

@@ -14,8 +14,7 @@ from main_method.compress_runs import compress_runs
 from main_method.propose_paths import query_seq
 from BWT_HMM.bwthmm import bwt_hmm
 
-#user = "Tad Berkery" # specify who you are so we now whose computer the profiling corresponds to
-user = 'Richard Hu'
+user = "Tad Berkery" # specify who you are so we now whose computer the profiling corresponds to
 
 # Define functions that return desired sample sequence to profile with data structures here
 def get_sample_sequence():
@@ -28,8 +27,8 @@ def get_sample_sequence():
     return seq
 
 def get_smaller_sequence():
-    seq, runs, len_seq = compress_runs.compress_runs("BWT_HMM/test.txt")
-    return seq, runs, len_seq
+    seq, runs, len_seq = compress_runs("BWT_HMM/test.txt")
+    return seq
 
 # For every data structure function you import, define custom function with @profile annotation to enable space complexity analysis
 # Make sure to pass sequence as argument to each defined function and to call data structure function defined in other file with this sequence passed as well.
@@ -47,9 +46,9 @@ def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
 ds_functions = [bwt_hmm_with_space_annotation, make_proposals_mlse] # add any functions for data structures you wish to benchmark (make sure you have made a copy and used the @profile annotation for memory_profiler space complexity anlaysis.)
 sample_functions = [get_sample_sequence, get_smaller_sequence] # now define any functions that will provide samples you wish to profile
 
-sample_function_descriptors = ["hypothetical_protein_test", "query_test"] # write appropriate names describing example sequences to test here
+sample_function_descriptors = ["hypothetical_protein_test", "compressed_hypothetical_protein_test"] # write appropriate names describing example sequences to test here
 data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi"] # write appropriate names describing data structures to profile here
-num_iterations = 100 # set number of times to run each unique sample sequence/data structure combination
+num_iterations = 1 # set number of times to run each unique sample sequence/data structure combination
 
 results = pd.DataFrame(columns = ["data_structure", "sample", "iteration", "user", "runtime"])
 sample_counter = 0
