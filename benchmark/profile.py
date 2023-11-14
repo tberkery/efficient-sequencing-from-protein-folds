@@ -6,7 +6,7 @@ import pandas as pd
 
 # Make sure to install all of the above packages
 
-continuation = True # are you adding on to previous results?
+continuation = False # are you adding on to previous results?
 
 if continuation:
     # copy all previous space complexities from earlier runs into current file
