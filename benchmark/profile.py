@@ -1,9 +1,12 @@
 import time
 from memory_profiler import profile
-import datetime
 import os
 import sys
 import pandas as pd
+
+# Make sure to install all of the above packages
+
+# Once all fields are complete, run the following line in the command line: python .\benchmark\profile.py > space_complexity_info.txt
 
 # Import any functions that you wish to profile in terms of space and time complexity
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
