@@ -317,9 +317,13 @@ def main():
     max_path_len = 5
 
     plotter = MLSE_Plot(seq, num_proposals, max_path_len)
+<<<<<<< HEAD
     proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
 
     print("Cumulative memory:", process.memory_info().rss)
+=======
+    proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=False)
+>>>>>>> d7cacadaebc927835eef0e4194d7a95235a5e472
     return
 
 if __name__ == '__main__':
