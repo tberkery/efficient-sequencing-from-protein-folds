@@ -49,7 +49,7 @@ sample_functions = [get_sample_sequence, get_smaller_sequence] # now define any 
 
 sample_function_descriptors = ["hypothetical_protein_test", "query_test"] # write appropriate names describing example sequences to test here
 data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi"] # write appropriate names describing data structures to profile here
-num_iterations = 10 # set number of times to run each unique sample sequence/data structure combination
+num_iterations = 100 # set number of times to run each unique sample sequence/data structure combination
 
 results = pd.DataFrame(columns = ["data_structure", "sample", "iteration", "user", "runtime"])
 sample_counter = 0
@@ -67,4 +67,4 @@ for func in sample_functions:
         ds_counter += 1
     sample_counter += 1
 
-results.to_csv("benchmarking_results.csv")
+results.to_csv("benchmarking_results.csv", index = False)

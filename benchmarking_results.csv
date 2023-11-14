@@ -1,4 +1,3 @@
-,data_structure,sample,iteration,user,runtime
-0,BWT-HMM,hypothetical_protein_test,0,Tad Berkery,25.606780767440796
-1,BWT-HMM,hypothetical_protein_test,1,Tad Berkery,27.175843954086304
-2,BWT-HMM,hypothetical_protein_test,2,Tad Berkery,25.242525339126587
+data_structure,sample,iteration,user,runtime
+BWT-HMM,hypothetical_protein_test,0,Tad Berkery,18.15732979774475
+BWT-HMM,hypothetical_protein_test,1,Tad Berkery,20.306697130203247

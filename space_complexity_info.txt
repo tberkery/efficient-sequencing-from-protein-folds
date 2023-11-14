@@ -1,0 +1,18 @@
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    30    113.7 MiB    113.7 MiB           1   @profile
+    31                                         def bwt_hmm_with_space_annotation(seq):
+    32    131.2 MiB     17.4 MiB           1       bwt_hmm(seq)
+
+
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    30    133.1 MiB    133.1 MiB           1   @profile
+    31                                         def bwt_hmm_with_space_annotation(seq):
+    32    129.8 MiB     -3.3 MiB           1       bwt_hmm(seq)
+
+
