@@ -314,7 +314,7 @@ def main():
     max_path_len = 10
 
     plotter = MLSE_Plot(seq, num_proposals, max_path_len)
-    proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=False)
     return
 
 if __name__ == '__main__':

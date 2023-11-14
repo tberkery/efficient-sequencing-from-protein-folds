@@ -6,6 +6,14 @@ import pandas as pd
 
 # Make sure to install all of the above packages
 
+continuation = True # are you adding on to previous results?
+
+if continuation:
+    # copy all previous space complexities from earlier runs into current file
+    with open(sys.argv[1], "r") as fh:
+        for line in fh.readlines():
+            print(line)
+
 # Once all fields are complete, run the following line in the command line: python .\benchmark\profile.py > space_complexity_info.txt
 
 # Import any functions that you wish to profile in terms of space and time complexity
@@ -39,7 +47,7 @@ def bwt_hmm_with_space_annotation(seq):
 @profile
 def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
     len_seq = len(seq)
-    query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=True)
+    query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
 
 # It is highly recommended that you make sure any data structure functions you call don't print anything to output. Otherwise, it will be hard to read space complexity info printed by memory_profiler to stdout.
 
@@ -48,9 +56,11 @@ sample_functions = [get_sample_sequence, get_smaller_sequence] # now define any 
 
 sample_function_descriptors = ["hypothetical_protein_test", "compressed_hypothetical_protein_test"] # write appropriate names describing example sequences to test here
 data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi"] # write appropriate names describing data structures to profile here
-num_iterations = 50 # set number of times to run each unique sample sequence/data structure combination
+num_iterations = 1 # set number of times to run each unique sample sequence/data structure combination
 
 results = pd.DataFrame(columns = ["data_structure", "sample", "iteration", "user", "runtime"])
+if continuation:
+    results = pd.read_csv(sys.argv[2])
 sample_counter = 0
 for func in sample_functions:
     ds_counter = 0
@@ -58,6 +68,7 @@ for func in sample_functions:
     for ds in ds_functions:
         ds_name = data_structure_descriptors[ds_counter]
         for i in range(num_iterations):
+            print("Data structure: ", ds_name, ", Sample: ", sample_name, ", Iteration ", str(i))
             start = time.time()
             ds(func())
             end = time.time()
