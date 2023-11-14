@@ -24,7 +24,7 @@ for (ds in data_structures) {
 }
 
 grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], ncol = 2)
-ggsave("space_complexity_histograms.png")
+ggsave("space_complexity_histograms.png", width = 12, height = 8, units = "in")
 
 df_tc_100k = df_tc %>%
   filter(sample == "hypothetical_protein_test")
