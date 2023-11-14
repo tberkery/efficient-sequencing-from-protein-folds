@@ -27,7 +27,7 @@ for (ds in data_structures) {
   }
 }
 
-grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], ncol = 2)
+grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], ncol = 2, widths = rep(7, 2), heights = c(5, 5))
 #ggsave("space_complexity_histograms.png", width = 12, height = 8, units = "in") # cannot save a grid arrange object... this line just saves last plot in grid
 
 df_tc_100k = df_tc %>%
