@@ -57,4 +57,4 @@ for func in sample_functions:
         ds_counter += 1
     sample_counter += 1
 
-results.to_csv("benchmarking_results.csv")
+results.to_csv("benchmarking_results.csv", index = False)
