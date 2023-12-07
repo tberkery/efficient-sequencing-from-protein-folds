@@ -191,9 +191,15 @@ class MLSE_Propose:
             self.graph.append(dict())
 
         with open(self.filename, 'r') as fh:
-            window = str(fh.read(self.len_graph)).strip()
+            len_window = 0
+            window = ''
+            while len_window < self.len_graph:
+                next = str(fh.read(1)).strip()
+                if len_window == 0 or next != window[-1]: # compress duplicate runs
+                    window += next
+                    len_window += 1
 
-            if window:
+            if next:
                 total_flow = 0
                 for path_offset in range(0, self.len_graph-2):
                     u = window[path_offset]
