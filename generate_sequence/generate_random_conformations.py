@@ -171,9 +171,9 @@ class ConformationGenerator:
 
 def main():
     alphabet = {1,2,3,4,5}
-    transitions = {
+    transitions = { # sparse transition matrix (any "unused" probability density will be distributed among remaining classes)
         1:{2:0.95, 1:0.05},
-        2:{3:0.95},
+        2:{3:0.95, 1:0.025},
         3:{4:0.95},
         4:{5:0.95}
     }
