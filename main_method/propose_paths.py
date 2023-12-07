@@ -91,7 +91,6 @@ class MLSE_Propose:
             v = path[idx+1]
             self.graph[idx][u][1][v] += new_flow
         u = path[-1]
-        print(u, v)
         #self.graph[-1][u][1][terminator] += new_flow
         return
 
@@ -226,9 +225,6 @@ class MLSE_Propose:
                 for v in outgoings:
                     if layer[u][1][v] < required_flow:
                         noise.add((idx_layer, u, v, layer[u][1].pop(v)))
-        for layer in self.graph:
-            for next, flow in layer.items():
-                print(next, flow)
         # MAKE N PROPOSALS AND REMOVE PROBABLE DUPLICATES
         #proposals = propose_n(graph_sorted, graph, graph_incoming, n=num_proposals, min_passes=0.5*len_graph)
         self.proposals = self.propose_n(n=self.num_proposals, min_walks=0.5*self.len_graph)
