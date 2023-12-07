@@ -39,9 +39,10 @@ def compress_runs(fileName):
 Propose the n most frequent sequence paths of <= k length. 
 """
 class MLSE_Propose:
-    def __init__(self, seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-        self.seq = seq
-        self.len_seq = len_seq
+    def __init__(self, filename, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+        self.filename = filename
+        #self.seq = seq
+        #self.len_seq = len_seq
         self.num_proposals = num_proposals
         self.max_path_len = max_path_len
         self.sep = sep # char separator for node/edge labels
@@ -85,12 +86,13 @@ class MLSE_Propose:
         return flow_max, u_max, v_max
 
     def update_dist(self, path, new_flow, terminator=None):
-        for idx in range(0, self.len_graph-1):
+        for idx in range(0, self.len_graph-2):
             u = path[idx]
             v = path[idx+1]
             self.graph[idx][u][1][v] += new_flow
         u = path[-1]
-        self.graph[-1][u][1][terminator] += new_flow
+        print(u, v)
+        #self.graph[-1][u][1][terminator] += new_flow
         return
 
     """
@@ -100,7 +102,7 @@ class MLSE_Propose:
         if self.len_graph == 0:
             return 0, ''
         
-        graph_end = self.len_graph - 1 # inclusive end
+        graph_end = self.len_graph - 2 # inclusive end
         path = ''
         flows = []
         
@@ -186,18 +188,33 @@ class MLSE_Propose:
     def mlse_viterbi(self):
         self.len_graph = self.max_path_len
         graph_keys = range(self.len_graph)
-        
         for idx in graph_keys:
             self.graph.append(dict())
-        total_flow = 0
-        for idx_seq in range(0, self.len_seq - self.len_graph + 1, 1): # max_path_len):
-            for path_offset in range(0, self.len_graph-1):
-                u = self.seq[idx_seq+path_offset]
-                v = self.seq[idx_seq+path_offset+1]
-                self.add_edge(path_offset, u, v)
-            self.add_edge(path_offset+1, v, None)
-            total_flow += 1
 
+        with open(self.filename, 'r') as fh:
+            window = str(fh.read(self.len_graph)).strip()
+
+            if window:
+                total_flow = 0
+                for path_offset in range(0, self.len_graph-2):
+                    u = window[path_offset]
+                    v = window[path_offset+1]
+                    self.add_edge(path_offset, u, v)
+                self.add_edge(path_offset+1, v, None)
+                total_flow += 1
+                while True:
+                    window = window[1:]
+                    next = str(fh.read(1)).strip()
+                    if next and len(next) > 0:
+                        window += next
+                        for path_offset in range(0, self.len_graph-2):
+                            u = window[path_offset]
+                            v = window[path_offset+1]
+                            self.add_edge(path_offset, u, v)
+                        self.add_edge(path_offset+1, v, None)
+                        total_flow += 1
+                    else:
+                        break
         # REMOVE LOW-CAPACITY EDGES
         required_flow = total_flow * self.threshold
         noise = set()
@@ -209,7 +226,9 @@ class MLSE_Propose:
                 for v in outgoings:
                     if layer[u][1][v] < required_flow:
                         noise.add((idx_layer, u, v, layer[u][1].pop(v)))
-        
+        for layer in self.graph:
+            for next, flow in layer.items():
+                print(next, flow)
         # MAKE N PROPOSALS AND REMOVE PROBABLE DUPLICATES
         #proposals = propose_n(graph_sorted, graph, graph_incoming, n=num_proposals, min_passes=0.5*len_graph)
         self.proposals = self.propose_n(n=self.num_proposals, min_walks=0.5*self.len_graph)
@@ -310,17 +329,25 @@ def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01
 def main():
     import os, psutil
     process = psutil.Process()
-    seq, runs, len_seq = compress_runs('../Langevin_clustering/sequence.txt') #'abcdefgh' #'abcdefabcdefefefefefefefefefabcdefgzzzzz'
-    print("Cumulative memory:", process.memory_info().rss)
+    m0 = process.memory_info().rss
+    print("Starting memory:", m0)
+    seq, runs, len_seq = compress_runs('../Langevin_clustering/sequence.txt') 
+    print("length of seq:", len_seq)
+    #tests = ['17383463846233278957234957324878926784302958903246803246478', 'abcdefghijklmnop','abcdefghghghghghabcdefedcbaghghghghabcdefghghgh', 'abcdefgh', 'abcdefabcdefefefefefefefefefabcdefgzzzzz']
+    #seq = tests[0]
     #len_seq = len(seq)
-    num_proposals = 10
-    max_path_len = 5
+    m1 = process.memory_info().rss
+    print("Added memory:", m1 - m0)
+    #len_seq = len(seq)
+    num_proposals = 50
+    max_path_len = 10
 
-    plotter = MLSE_Plot(seq, num_proposals, max_path_len)
-    
-    proposer = MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
-    print("Cumulative memory:", process.memory_info().rss)
+    proposer = MLSE_Propose('../generate_sequence/simulation.txt', num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+
+    m2 = process.memory_info().rss
+    print("Added memory:", m2-m1)
     return
 
 if __name__ == '__main__':
