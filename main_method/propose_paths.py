@@ -40,10 +40,10 @@ def compress_runs(fileName):
 Propose the n most frequent sequence paths of <= k length. 
 """
 class MLSE_Propose:
-    def __init__(self, filename, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-        self.filename = filename
-        #self.seq = seq
-        #self.len_seq = len_seq
+    def __init__(self, seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+        #self.filename = filename
+        self.seq = seq
+        self.len_seq = len(seq)
         self.num_proposals = num_proposals
         self.max_path_len = max_path_len
         self.sep = sep # char separator for node/edge labels
@@ -205,7 +205,32 @@ class MLSE_Propose:
         self.total_flow = 0
         for idx in graph_keys:
             self.graph.append(dict())
+        
+        seq_idx = 0
+        
+        len_window = 0
+        window = ''
+        while seq_idx < self.len_seq and len_window < self.len_graph:
+            next = str(self.seq[seq_idx]).strip()
+            seq_idx += 1
+            if len_window == 0 or next != window[-1]: # compress duplicate runs
+                window += next
+                len_window += 1
 
+        if len_window == self.len_graph:
+            self.update_graph(window)
+            while seq_idx < self.len_seq:
+                next = str(self.seq[seq_idx]).strip()
+                seq_idx += 1
+                if next and len(next) > 0:
+                    if next != window[-1]:
+                        window = window[1:]
+                        window += next
+                        self.update_graph(window)
+                else:
+                    break
+        """
+        # read directly from file
         with open(self.filename, 'r') as fh:
             len_window = 0
             window = ''
@@ -226,6 +251,7 @@ class MLSE_Propose:
                             self.update_graph(window)
                     else:
                         break
+        """
         
         # REMOVE LOW-CAPACITY EDGES (one signal processing paper just does beam search instead)
         required_flow = self.total_flow * self.threshold
@@ -366,7 +392,8 @@ def main():
 
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
-    proposer = MLSE_Propose(seqfile, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    #proposer = MLSE_Propose(seqfile, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    proposer = MLSE_Propose(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
     #proposer.print_graph()
     m2 = process.memory_info().rss
     print("Added memory:", m2-m1)

@@ -47,8 +47,7 @@ def bwt_hmm_with_space_annotation(seq):
 
 @profile
 def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
-    len_seq = len(seq)
-    query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+    query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
 
 @profile
 def bwt_hmm_with_merging_strategy(seq):
