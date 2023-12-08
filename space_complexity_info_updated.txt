@@ -1,0 +1,2023 @@
+Running command iteration 1
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    172.6 MiB    172.6 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.9 MiB    144.3 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.2 MiB    317.2 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.3 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.4 MiB    317.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.1 MiB     -0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.2 MiB    317.2 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB     -0.7 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.4 MiB    315.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.6 MiB     -9.8 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.5 MiB    307.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.5 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 2
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.7 MiB    173.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB    143.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.9 MiB    316.9 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.0 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.1 MiB    317.1 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.3 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.5 MiB    317.5 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB     -1.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.4 MiB    315.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.5 MiB    -10.0 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 3
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.0 MiB    174.0 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.1 MiB    142.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.4 MiB    316.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    316.5 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    316.6 MiB    316.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    316.8 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.9 MiB    316.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    315.9 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    314.6 MiB    314.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    304.8 MiB     -9.8 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    306.6 MiB    306.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    306.6 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 4
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.1 MiB    174.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.4 MiB    143.3 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.6 MiB    317.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.7 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.7 MiB    317.7 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.6 MiB     -0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.8 MiB    317.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.8 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.6 MiB    315.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.8 MiB     -9.8 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.7 MiB    307.7 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.7 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 5
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.1 MiB    143.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.6 MiB    317.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.7 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.8 MiB    317.8 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.9 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.2 MiB    316.2 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.9 MiB      0.6 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.9 MiB    316.9 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.6 MiB    -11.3 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.6 MiB    307.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.7 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 6
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.7 MiB    173.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.6 MiB    142.9 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.1 MiB    317.1 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.2 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.2 MiB    317.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.8 MiB      0.6 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.0 MiB    316.0 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.4 MiB      0.4 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.6 MiB    316.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.3 MiB    -11.3 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 7
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.8 MiB    142.9 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.0 MiB    317.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.1 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.1 MiB    317.1 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.7 MiB      0.5 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.0 MiB    316.0 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB      0.7 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.7 MiB    316.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.5 MiB    -11.2 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.5 MiB    307.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.6 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 8
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.6 MiB    173.6 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB    142.8 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.8 MiB    316.8 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    316.9 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    316.9 MiB    316.9 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.4 MiB      0.4 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.5 MiB    317.5 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.4 MiB     -1.2 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.4 MiB    315.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.2 MiB    -10.2 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.2 MiB    307.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 9
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.1 MiB    174.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.4 MiB    143.2 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.7 MiB    317.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.8 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.8 MiB    317.8 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.9 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    318.1 MiB    318.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.1 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.7 MiB    315.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.9 MiB     -9.9 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.8 MiB    307.8 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.9 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 10
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.8 MiB    173.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB    142.9 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.0 MiB    317.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.1 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.2 MiB    317.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.8 MiB      0.6 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.1 MiB    316.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB      0.6 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.5 MiB    316.5 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.6 MiB    -10.8 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.6 MiB    307.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.7 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 11
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.8 MiB    173.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.6 MiB    142.7 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.9 MiB    316.9 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.0 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.1 MiB    317.1 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.4 MiB      0.3 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.6 MiB    317.6 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.6 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.6 MiB    315.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.5 MiB    -10.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.5 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 12
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.7 MiB    173.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB    142.8 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.8 MiB    316.8 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    316.9 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    316.9 MiB    316.9 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.4 MiB      0.5 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    315.8 MiB    315.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.2 MiB      0.4 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.7 MiB    316.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.3 MiB    -11.4 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.2 MiB    307.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.3 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 13
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.3 MiB    174.3 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.2 MiB    142.9 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.5 MiB    317.5 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.6 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.7 MiB    317.7 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    318.2 MiB      0.5 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.5 MiB    316.5 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.0 MiB      0.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.0 MiB    317.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.8 MiB    -11.2 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.8 MiB    307.8 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.8 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 14
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    172.8 MiB    172.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.2 MiB    144.4 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.5 MiB    317.5 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.6 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.7 MiB    317.7 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.5 MiB     -0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    315.9 MiB    315.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB      0.6 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.6 MiB    316.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.3 MiB    -11.3 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.6 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 15
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.7 MiB    173.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB    143.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.0 MiB    317.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.1 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.2 MiB    317.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.8 MiB      0.7 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.1 MiB    316.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB      0.4 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.8 MiB    316.8 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.5 MiB    -11.3 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 16
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB    142.8 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.1 MiB    317.1 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.2 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.3 MiB    317.3 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.6 MiB      0.4 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    315.9 MiB    315.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.4 MiB      0.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.6 MiB    316.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.2 MiB    -11.4 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.3 MiB    307.3 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 17
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.1 MiB    174.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.1 MiB    143.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.4 MiB    317.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.5 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.6 MiB    317.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.5 MiB     -0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.7 MiB    317.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.8 MiB    315.8 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.6 MiB    -10.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.6 MiB    307.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.6 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 18
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.4 MiB    143.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.8 MiB    317.8 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.8 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.9 MiB    317.9 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.8 MiB     -0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.9 MiB    317.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB     -1.2 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.4 MiB    315.4 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.7 MiB     -9.6 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.7 MiB    307.7 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.7 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 19
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.0 MiB    174.0 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.0 MiB    142.9 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.2 MiB    317.2 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.3 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.4 MiB    317.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.5 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.7 MiB    317.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.6 MiB     -1.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.6 MiB    315.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.7 MiB     -9.9 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.6 MiB    307.6 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.6 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 20
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    174.1 MiB    174.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB    142.6 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.0 MiB    317.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.1 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.2 MiB    317.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    318.0 MiB      0.8 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.1 MiB    316.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.4 MiB      0.3 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.7 MiB    316.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.3 MiB    -11.4 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 21
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    172.5 MiB    172.5 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.2 MiB    144.7 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.3 MiB    317.3 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.4 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.5 MiB    317.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.4 MiB     -0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.6 MiB    317.6 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB     -1.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.6 MiB    315.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.4 MiB    -10.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.6 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 22
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.0 MiB    143.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.3 MiB    317.3 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.4 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.5 MiB    317.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.5 MiB     -0.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.6 MiB    317.6 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.3 MiB     -1.3 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    315.2 MiB    315.2 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.4 MiB     -9.8 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.2 MiB    307.2 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.5 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 23
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.9 MiB    173.9 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.0 MiB    143.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.3 MiB    317.3 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.4 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.5 MiB    317.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.7 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.0 MiB    316.0 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.5 MiB      0.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.7 MiB    316.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.5 MiB    -11.2 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.5 MiB      0.1 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 24
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    172.5 MiB    172.5 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.6 MiB    145.0 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.7 MiB    317.7 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    306.0 MiB    -11.7 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    308.1 MiB    308.1 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.1 MiB      9.0 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    317.3 MiB    317.3 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.7 MiB     -0.6 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.0 MiB    316.0 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    316.0 MiB      0.0 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    316.1 MiB    316.1 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    306.3 MiB     -9.8 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Running command iteration 25
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:151: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity)
+C:\Users\Tad\Documents\protein-fold-pipeline\main_method\propose_paths.py:153: RuntimeWarning: divide by zero encountered in log
+  d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
+MultinomialHMM has undergone major changes. The previous version was implementing a CategoricalHMM (a special case of MultinomialHMM). This new implementation follows the standard definition for a Multinomial distribution (e.g. as in https://en.wikipedia.org/wiki/Multinomial_distribution). See these issues for details:
+https://github.com/hmmlearn/hmmlearn/issues/335
+https://github.com/hmmlearn/hmmlearn/issues/340
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    173.8 MiB    173.8 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    317.0 MiB    143.1 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    317.3 MiB    317.3 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    317.5 MiB      0.1 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    317.5 MiB    317.5 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    317.7 MiB      0.2 MiB           1       bwt_hmm_with_merge(seq)
+
+
+Data structure:  BWT-HMM , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    316.1 MiB    316.1 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    316.6 MiB      0.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    48    316.6 MiB    316.6 MiB           1   @profile
+    49                                         def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
+    50    305.4 MiB    -11.3 MiB           1       query_seq(seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
+
+
+Data structure:  BWT-HMM-Merging , Sample:  compressed_hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    52    307.4 MiB    307.4 MiB           1   @profile
+    53                                         def bwt_hmm_with_merging_strategy(seq):
+    54    307.4 MiB      0.0 MiB           1       bwt_hmm_with_merge(seq)
