@@ -190,6 +190,14 @@ class MLSE_Propose:
             self.propose_n_candidates(proposals, seen, n, min_walks)
             new_len = len(proposals)
         return proposals
+    
+    def update_graph(self, subseq):
+        for path_offset in range(0, self.len_graph-1):
+            u = subseq[path_offset]
+            v = subseq[path_offset+1]
+            self.add_edge(path_offset, u, v)
+        self.add_edge(path_offset+1, v, None)
+        self.total_flow += 1
 
     def mlse_viterbi(self):
         self.len_graph = self.max_path_len
@@ -207,24 +215,15 @@ class MLSE_Propose:
                     window += next
                     len_window += 1
 
-            if next:
-                for path_offset in range(0, self.len_graph-1):
-                    u = window[path_offset]
-                    v = window[path_offset+1]
-                    self.add_edge(path_offset, u, v)
-                self.add_edge(path_offset+1, v, None)
-                self.total_flow += 1
+            if len_window == self.len_graph:
+                self.update_graph(window)
                 while True:
-                    window = window[1:]
                     next = str(fh.read(1)).strip()
                     if next and len(next) > 0:
-                        window += next
-                        for path_offset in range(0, self.len_graph-1):
-                            u = window[path_offset]
-                            v = window[path_offset+1]
-                            self.add_edge(path_offset, u, v)
-                        self.add_edge(path_offset+1, v, None)
-                        self.total_flow += 1
+                        if next != window[-1]:
+                            window = window[1:]
+                            window += next
+                            self.update_graph(window)
                     else:
                         break
         
@@ -348,7 +347,8 @@ def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
 def main():
-    seqfile = '../generate_sequence/simulation.txt'
+    #seqfile = '../generate_sequence/simulation.txt'
+    seqfile = '../Langevin_clustering/sequence.txt'
     import os, psutil
     process = psutil.Process()
     m0 = process.memory_info().rss

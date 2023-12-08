@@ -191,7 +191,7 @@ class MLSE_Propose:
                 bisect.insort(proposals, proposal, key=lambda x: -x[0])
         return proposals[:n]
     
-    def update_seed(self, subseq):
+    def update_graph(self, subseq):
         seed = subseq[0]
         if seed not in self.graph:
             # make subgraph starting with the letter
@@ -224,14 +224,14 @@ class MLSE_Propose:
                     len_window += 1
 
             if len_window == self.len_graph:
-                self.update_seed(window)
-
+                self.update_graph(window)
                 while True:
-                    window = window[1:]
                     next = str(fh.read(1)).strip()
                     if next and len(next) > 0:
-                        window += next
-                        self.update_seed(window)
+                        if next != window[-1]:
+                            window = window[1:]
+                            window += next
+                            self.update_graph(window)
                     else:
                         break
         
@@ -348,7 +348,8 @@ def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
 def main():
-    seqfile = '../generate_sequence/simulation.txt'
+    seqfile = '../Langevin_clustering/sequence.txt'
+    #seqfile = '../generate_sequence/simulation.txt'
     import os, psutil
     process = psutil.Process()
     m0 = process.memory_info().rss
