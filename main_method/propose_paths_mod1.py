@@ -7,7 +7,6 @@ from collections import defaultdict
 import bisect
 import networkx as nx
 from matplotlib import pyplot as plt
-from numpy import log
 
 """
 Compress single-character runs. 
@@ -51,7 +50,8 @@ class MLSE_Propose:
 
         # flow graph
         self.len_graph = 0
-        self.graph = list()
+        self.graph = dict()
+        self.graph_range = range(0, 0)
         self.threshold = threshold # ignore a paths with less than a certain percentage of flow
         self.total_flow = 0
 
@@ -64,17 +64,9 @@ class MLSE_Propose:
         print("proposal", "exact_matches", sep='\t')
         for num_exact_matches, proposal in self.proposals:
             print(proposal, num_exact_matches, sep='\t')
-    def print_graph(self):
-        for i in range(0, self.len_graph):
-            print(i)
-            for node, data in self.graph[i].items():
-                flow_in, dict_edges = data
-                print(f'\t{node} {flow_in}')
-                for out, flow_out in dict_edges.items():
-                    print(f'\t\t{out}, {flow_out}')
 
-    def add_edge(self, idx_layer, u, v, new_flow=1):
-        layer = self.graph[idx_layer]
+    def add_edge(self, seed, idx_layer, u, v, new_flow=1):
+        layer = self.graph[seed][idx_layer]
         if u not in layer:
             layer[u] = [0, defaultdict(int)]    
         layer[u][0] += new_flow
@@ -95,17 +87,17 @@ class MLSE_Propose:
                 flow_max = flow
         return flow_max, u_max, v_max
 
-    def update_dist(self, path, terminator=None):
+    def update_dist(self, seed, path, terminator=None):
         bottleneck = float('inf')
         for idx in range(0, self.len_graph-1):
             u = path[idx]
             v = path[idx+1]
-            bottleneck = min(bottleneck, self.graph[idx][u][1][v])
+            bottleneck = min(bottleneck, self.graph[seed][idx][u][1][v])
 
         for idx in range(0, self.len_graph-1):
             u = path[idx]
             v = path[idx+1]
-            self.graph[idx][u][1][v] = self.graph[idx][u][1][v] - bottleneck
+            self.graph[seed][idx][u][1][v] = self.graph[seed][idx][u][1][v] - bottleneck
         u = path[-1]
         #self.graph[-1][u][1][terminator] += new_flow
         return bottleneck
@@ -113,20 +105,20 @@ class MLSE_Propose:
     """
     Use the distance graph to deduce the heaviest path (dynamic programming).
     """
-    def backtrace_heavy_path(self, dist_from_source):
+    def backtrace_heavy_path(self, seed, dist_from_source):
         if self.len_graph == 0:
             return 0, ''
         
         graph_end = self.len_graph - 1 # inclusive end
-        path = ''
+        path = str(seed)
         
         # walk left and complete the heavy path
-        dist_layer, u, v = self.layer_dist_max(dist_from_source[graph_end])
+        dist_layer, u, v = self.layer_dist_max(dist_from_source[seed][graph_end])
         if v is not None:
             path = str(v) + path
         for idx in range(graph_end, 0, -1):
             v = u
-            dist_layer, u = dist_from_source[idx-1][v]
+            dist_layer, u = dist_from_source[seed][idx-1][v]
             if v is not None:
                 path = str(v) + path
 
@@ -134,35 +126,36 @@ class MLSE_Propose:
             path = str(u) + path
 
         # update the distances
-        bottleneck = self.update_dist(path)
+        bottleneck = self.update_dist(seed, path)
         return bottleneck, path
     
     def build_dist_graph(self):
-        dist_from_source = []
-        for idx in range(0, self.len_graph):
-            dist_from_source.append(dict())
-            for u, data in self.graph[idx].items():
-                _, edges_outgoing = data
-                for v, c in edges_outgoing.items():
-                    if idx == 0:
-                        d = c
-                    else:
-                        d = c + dist_from_source[idx-1][u][0]
-                    if v not in dist_from_source[idx] or d > dist_from_source[idx][v][0]:
-                        dist_from_source[idx][v] = (d, u)
+        dist_from_source = dict()
+        for seed in self.graph:
+            dist_from_source[seed] = list()
+            for idx in range(0, self.len_graph):
+                dist_from_source[seed].append(dict())
+                for u, data in self.graph[seed][idx].items():
+                    _, edges_outgoing = data
+                    for v, c in edges_outgoing.items():
+                        if idx == 0:
+                            d = c
+                        else:
+                            d = c + dist_from_source[seed][idx-1][u][0]
+                        if v not in dist_from_source[seed][idx] or d > dist_from_source[seed][idx][v][0]:
+                            dist_from_source[seed][idx][v] = (d, u)
         return dist_from_source
 
-    def propose_n_candidates(self, proposals, seen, n:int, min_walks:int):
+    def propose_n_candidates(self, seed, proposals, seen, n:int, min_walks:int):
         len_proposals = len(proposals)
         prev_len = None
         consec_repeats = 0
         while(len_proposals < n):
             # find longest path to each node in this topologically sorted DAG
             dist_from_source = self.build_dist_graph()
-            bottleneck, proposed_path = self.backtrace_heavy_path(dist_from_source)
+            bottleneck, proposed_path = self.backtrace_heavy_path(seed, dist_from_source)
             if proposed_path not in seen:
                 consec_repeats = 0
-                seen.add(proposed_path)
                 bisect.insort(proposals, (bottleneck, proposed_path), key=lambda x: -x[0])
                 #idx_add += 1
                 len_proposals += 1
@@ -178,25 +171,48 @@ class MLSE_Propose:
             prev_len = len_proposals
         return
 
-    def propose_n(self, n:int, min_walks:int):
+    def propose_n(self, n:int, num_seeds:int, min_walks:int):
         # construct proposals and track seen ("visted"? oops) paths
         proposals = list()
         seen = set()
         prev_len = len(proposals)
-        self.propose_n_candidates(proposals, seen, n, min_walks)
-        new_len = len(proposals)
-        while (new_len < n and new_len != prev_len):
-            prev_len = new_len
-            self.propose_n_candidates(proposals, seen, n, min_walks)
+
+        n_seed = max(1, int(n/num_seeds))
+        for seed in self.graph:
+            seed_proposals = list()
+            self.propose_n_candidates(seed, seed_proposals, seen, n_seed, min_walks)
             new_len = len(proposals)
-        return proposals
+            while (new_len < n and new_len != prev_len):
+                prev_len = new_len
+                self.propose_n_candidates(seed, seed_proposals, seen, n_seed, min_walks)
+                new_len = len(proposals)
+
+            for proposal in seed_proposals:
+                bisect.insort(proposals, proposal, key=lambda x: -x[0])
+        return proposals[:n]
+    
+    def update_seed(self, subseq):
+        seed = subseq[0]
+        if seed not in self.graph:
+            # make subgraph starting with the letter
+            self.graph[seed] = list()
+            for idx in self.graph_range:
+                self.graph[seed].append(dict())
+
+        # add flow to path
+        for path_offset in range(0, self.len_graph-1):
+            u = subseq[path_offset]
+            v = subseq[path_offset+1]
+            self.add_edge(seed, path_offset, u, v)
+        self.add_edge(seed, path_offset+1, v, None)
+        self.total_flow += 1
+        
 
     def mlse_viterbi(self):
+        self.graph = dict()
         self.len_graph = self.max_path_len
-        graph_keys = range(self.len_graph)
+        self.graph_range = range(self.len_graph)
         self.total_flow = 0
-        for idx in graph_keys:
-            self.graph.append(dict())
 
         with open(self.filename, 'r') as fh:
             len_window = 0
@@ -207,31 +223,23 @@ class MLSE_Propose:
                     window += next
                     len_window += 1
 
-            if next:
-                for path_offset in range(0, self.len_graph-1):
-                    u = window[path_offset]
-                    v = window[path_offset+1]
-                    self.add_edge(path_offset, u, v)
-                self.add_edge(path_offset+1, v, None)
-                self.total_flow += 1
+            if len_window == self.len_graph:
+                self.update_seed(window)
+
                 while True:
                     window = window[1:]
                     next = str(fh.read(1)).strip()
                     if next and len(next) > 0:
                         window += next
-                        for path_offset in range(0, self.len_graph-1):
-                            u = window[path_offset]
-                            v = window[path_offset+1]
-                            self.add_edge(path_offset, u, v)
-                        self.add_edge(path_offset+1, v, None)
-                        self.total_flow += 1
+                        self.update_seed(window)
                     else:
                         break
         
-        # REMOVE LOW-CAPACITY EDGES (one signal processing paper just does beam search instead)
+        """ No longer useful for this particular method modification
+        # REMOVE LOW-CAPACITY EDGES
         required_flow = self.total_flow * self.threshold
         noise = set()
-        for idx_layer in graph_keys:
+        for idx_layer in self.graph_range:
             layer = self.graph[idx_layer]
             incomings = list(layer.keys())
             for u in incomings:
@@ -239,20 +247,12 @@ class MLSE_Propose:
                 for v in outgoings:
                     if layer[u][1][v] < required_flow:
                         noise.add((idx_layer, u, v, layer[u][1].pop(v)))
+        """
         
-        """
-        for idx_layer in graph_keys:
-            layer = self.graph[idx_layer]
-            incomings = list(layer.keys())
-            for u in incomings:
-                outgoings = list(layer[u][1].keys())
-                for v in outgoings:
-                    layer[u][1][v] = log(layer[u][1][v])
-        """
-
         # MAKE N PROPOSALS AND REMOVE PROBABLE DUPLICATES
         #proposals = propose_n(graph_sorted, graph, graph_incoming, n=num_proposals, min_passes=0.5*len_graph)
-        self.proposals = self.propose_n(n=self.num_proposals, min_walks=0.5*self.len_graph)
+        num_seeds = len(self.graph)
+        self.proposals = self.propose_n(n=self.num_proposals, num_seeds=num_seeds, min_walks=0.5*self.len_graph)
         
         if self.verbose:
             self.report()
@@ -361,13 +361,13 @@ def main():
     m1 = process.memory_info().rss
     print("Added memory:", m1 - m0)
     #len_seq = len(seq)
-    num_proposals = 50
+    num_proposals = 30
     max_path_len = 10
 
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
     proposer = MLSE_Propose(seqfile, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
-    #proposer.print_graph()
+
     m2 = process.memory_info().rss
     print("Added memory:", m2-m1)
     return
