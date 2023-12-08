@@ -87,14 +87,14 @@ class MLSE_Propose:
     def layer_dist_max(self, layer):
         u_max = ''
         v_max = ''
-        e_minimize = float('inf')
+        flow_max = float('-inf')
         for v in layer.keys():
-            e_local, u = layer[v]
-            if e_local < e_minimize:
+            flow, u = layer[v]
+            if flow > flow_max:
                 u_max = u
                 v_max = v
-                e_minimize = e_local
-        return e_minimize, u_max, v_max
+                flow_max = flow
+        return flow_max, u_max, v_max
 
     def update_dist(self, path, terminator=None):
         bottleneck = float('inf')
@@ -146,10 +146,10 @@ class MLSE_Propose:
                 _, edges_outgoing = data
                 for v, c in edges_outgoing.items():
                     if idx == 0:
-                        d = min(-log(c/self.total_flow), 10**6)
+                        d = c
                     else:
-                        d = min(-log(c/self.total_flow), 10**6) + dist_from_source[idx-1][u][0]
-                    if v not in dist_from_source[idx] or d < dist_from_source[idx][v][0]:
+                        d = c + dist_from_source[idx-1][u][0]
+                    if v not in dist_from_source[idx] or d > dist_from_source[idx][v][0]:
                         dist_from_source[idx][v] = (d, u)
         return dist_from_source
 
