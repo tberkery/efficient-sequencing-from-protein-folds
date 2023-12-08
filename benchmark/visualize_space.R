@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(gridExtra)
 
-df_tc = read_csv("memory_usage.csv")
+df_tc = read_csv("memory_usage_updated.csv")
 # assuming protein-fold-pipeline is your working directory
 
 plots = vector(mode = "list", length = 4)
@@ -45,6 +45,6 @@ p2 = ggplot(df_tc_comp, aes(x = memory_usage, fill = data_structure)) +
        x = "Memory Used (MiB)",
        y = "Density")
 
-ggsave("space_density_test_protein.png", p1, width = 12, height = 8, units = "in")
-ggsave("space_density_compressed_protein.png", p2, width = 12, height = 8, units = "in")
+ggsave("space_density_test_protein_updated.png", p1, width = 12, height = 8, units = "in")
+ggsave("space_density_compressed_protein_updated.png", p2, width = 12, height = 8, units = "in")
 

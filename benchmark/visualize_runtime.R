@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(gridExtra)
 
-df_tc = read_csv("benchmarking_results.csv")
+df_tc = read_csv("benchmarking_results_updated.csv")
 # assuming protein-fold-pipeline is your working directory
 
 plots = vector(mode = "list", length = 4)
@@ -44,6 +44,6 @@ p2 = ggplot(df_tc_comp, aes(x = runtime, fill = data_structure)) +
        x = "Runtime",
        y = "Density")
 
-ggsave("runtime_density_test_protein.png", p1, width = 12, height = 8, units = "in")
-ggsave("runtime_density_compressed_protein.png", p2, width = 12, height = 8, units = "in")
+ggsave("runtime_density_test_protein_updated.png", p1, width = 12, height = 8, units = "in")
+ggsave("runtime_density_compressed_protein_updated.png", p2, width = 12, height = 8, units = "in")
 
