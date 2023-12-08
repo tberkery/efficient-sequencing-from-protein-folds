@@ -39,10 +39,10 @@ def compress_runs(fileName):
 Propose the n most frequent sequence paths of <= k length. 
 """
 class MLSE_Propose:
-    def __init__(self, filename, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-        self.filename = filename
-        #self.seq = seq
-        #self.len_seq = len_seq
+    def __init__(self, seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+        #self.filename = filename
+        self.seq = seq
+        self.len_seq = len(seq)
         self.num_proposals = num_proposals
         self.max_path_len = max_path_len
         self.sep = sep # char separator for node/edge labels
@@ -207,13 +207,41 @@ class MLSE_Propose:
         self.add_edge(seed, path_offset+1, v, None)
         self.total_flow += 1
         
-
-    def mlse_viterbi(self):
+    def seq_to_graph(self):
+        # (re)-initialize graph
         self.graph = dict()
         self.len_graph = self.max_path_len
         self.graph_range = range(self.len_graph)
         self.total_flow = 0
 
+        # parse seq to graph
+        seq_idx = 0
+        len_window = 0
+        window = ''
+        while seq_idx < self.len_seq and len_window < self.len_graph:
+            next = str(self.seq[seq_idx]).strip()
+            seq_idx += 1
+            if len_window == 0 or next != window[-1]: # compress duplicate runs
+                window += next
+                len_window += 1
+
+        if len_window == self.len_graph:
+            self.update_graph(window)
+            while seq_idx < self.len_seq:
+                next = str(self.seq[seq_idx]).strip()
+                seq_idx += 1
+                if next and len(next) > 0:
+                    if next != window[-1]:
+                        window = window[1:]
+                        window += next
+                        self.update_graph(window)
+                else:
+                    break
+
+    def mlse_viterbi(self):
+        self.seq_to_graph()
+
+        """ parse file directly into graph
         with open(self.filename, 'r') as fh:
             len_window = 0
             window = ''
@@ -234,6 +262,7 @@ class MLSE_Propose:
                             self.update_graph(window)
                     else:
                         break
+        """
         
         """ No longer useful for this particular method modification
         # REMOVE LOW-CAPACITY EDGES
@@ -344,8 +373,9 @@ def query_seq_file(filepath_seq, num_proposals, max_path_len, sep='_', threshold
     seq, runs, len_seq = compress_runs(filepath_seq)
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
-def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-    return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
+def query_seq(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+    return MLSE_Propose(seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
+
 
 def main():
     seqfile = '../Langevin_clustering/sequence.txt'
@@ -367,7 +397,7 @@ def main():
 
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
-    proposer = MLSE_Propose(seqfile, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    proposer = MLSE_Propose(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
 
     m2 = process.memory_info().rss
     print("Added memory:", m2-m1)

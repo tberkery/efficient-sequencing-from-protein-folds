@@ -52,6 +52,7 @@ class MLSE_Propose:
         # flow graph
         self.len_graph = 0
         self.graph = list()
+        self.graph_keys = None
         self.threshold = threshold # ignore a paths with less than a certain percentage of flow
         self.total_flow = 0
 
@@ -198,16 +199,16 @@ class MLSE_Propose:
             self.add_edge(path_offset, u, v)
         self.add_edge(path_offset+1, v, None)
         self.total_flow += 1
-
-    def mlse_viterbi(self):
+    
+    def seq_to_graph(self):
+        # (re)-initialize graph
         self.len_graph = self.max_path_len
-        graph_keys = range(self.len_graph)
+        self.graph_keys = range(self.len_graph)
         self.total_flow = 0
-        for idx in graph_keys:
+        for idx in self.graph_keys:
             self.graph.append(dict())
-        
+        # parse seq to graph
         seq_idx = 0
-        
         len_window = 0
         window = ''
         while seq_idx < self.len_seq and len_window < self.len_graph:
@@ -229,8 +230,12 @@ class MLSE_Propose:
                         self.update_graph(window)
                 else:
                     break
+
+    def mlse_viterbi(self):
+        self.seq_to_graph()
+        
         """
-        # read directly from file
+        # parse seq directly from file
         with open(self.filename, 'r') as fh:
             len_window = 0
             window = ''
@@ -256,7 +261,7 @@ class MLSE_Propose:
         # REMOVE LOW-CAPACITY EDGES (one signal processing paper just does beam search instead)
         required_flow = self.total_flow * self.threshold
         noise = set()
-        for idx_layer in graph_keys:
+        for idx_layer in self.graph_keys:
             layer = self.graph[idx_layer]
             incomings = list(layer.keys())
             for u in incomings:
@@ -266,7 +271,7 @@ class MLSE_Propose:
                         noise.add((idx_layer, u, v, layer[u][1].pop(v)))
         
         """
-        for idx_layer in graph_keys:
+        for idx_layer in self.graph_keys:
             layer = self.graph[idx_layer]
             incomings = list(layer.keys())
             for u in incomings:
@@ -369,8 +374,8 @@ def query_seq_file(filepath_seq, num_proposals, max_path_len, sep='_', threshold
     seq, runs, len_seq = compress_runs(filepath_seq)
     return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
-def query_seq(seq, len_seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
-    return MLSE_Propose(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
+def query_seq(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True):
+    return MLSE_Propose(seq, num_proposals, max_path_len, sep=sep, threshold=threshold, verbose=verbose)
 
 def main():
     #seqfile = '../generate_sequence/simulation.txt'
@@ -393,7 +398,8 @@ def main():
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
     #proposer = MLSE_Propose(seqfile, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
-    proposer = MLSE_Propose(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    #proposer = MLSE_Propose(seq, num_proposals, max_path_len, sep='_', threshold=0.01, verbose=True)
+    proposer = query_seq(seq, num_proposals, max_path_len)
     #proposer.print_graph()
     m2 = process.memory_info().rss
     print("Added memory:", m2-m1)
