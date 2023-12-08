@@ -487,7 +487,7 @@ def main():
     print("Added memory:", m1 - m0)
     #len_seq = len(seq)
     num_proposals = 30
-    max_path_len = 10
+    max_path_len = 5
 
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
