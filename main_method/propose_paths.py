@@ -55,6 +55,8 @@ class MLSE_Propose:
         self.graph_keys = None
         self.threshold = threshold # ignore a paths with less than a certain percentage of flow
         self.total_flow = 0
+        
+        self.max_capacity = float('inf')
 
         self.mlse_viterbi()
     
@@ -146,9 +148,9 @@ class MLSE_Propose:
                 _, edges_outgoing = data
                 for v, c in edges_outgoing.items():
                     if idx == 0:
-                        d = min(-log(c/self.total_flow), 10**6)
+                        d = min(-log(c/self.total_flow), self.max_capacity)
                     else:
-                        d = min(-log(c/self.total_flow), 10**6) + dist_from_source[idx-1][u][0]
+                        d = min(-log(c/self.total_flow), self.max_capacity) + dist_from_source[idx-1][u][0]
                     if v not in dist_from_source[idx] or d < dist_from_source[idx][v][0]:
                         dist_from_source[idx][v] = (d, u)
         return dist_from_source
@@ -230,6 +232,8 @@ class MLSE_Propose:
                         self.update_graph(window)
                 else:
                     break
+        
+        self.max_capacity = -log(1/self.total_flow)
 
     def mlse_viterbi(self):
         self.seq_to_graph()
