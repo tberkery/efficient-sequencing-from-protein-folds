@@ -92,13 +92,23 @@ class MLSE_Propose:
             next, offset = self.read_next(seq, offset)
             t = self.is_transition(next)
             next = self.strip(next)
-            if seq_out and t:
+            if seq_out and t and offset > 0:
                 seq_out += next[1:]
             else:
                 seq_out += next
         return seq_out
 
-    def report(self, compact=True):
+    def report(self, compact=False):
+        """
+        if compact:
+            # compress the transitions back to the original conformations
+            proposals_compressed = defaultdict(int)
+            for num_exact_matches, proposal in self.proposals:
+                proposal = self.compress_transitions(proposal)
+                proposals_compressed[proposal[:self.max_path_len]] += num_exact_matches
+            print(proposals_compressed)
+        """
+        
         print("proposal", "exact_matches", sep='\t')
         for num_exact_matches, proposal in self.proposals:
             if compact:
@@ -477,7 +487,7 @@ def main():
     print("Added memory:", m1 - m0)
     #len_seq = len(seq)
     num_proposals = 30
-    max_path_len = 10
+    max_path_len = 5
 
     #plotter = MLSE_Plot(seq, num_proposals, max_path_len)
 
