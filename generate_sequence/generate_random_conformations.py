@@ -184,18 +184,19 @@ class ConformationGenerator_Patterns:
 
 def main():
     alphabet = []
-    for i in range(65,65+25):
+    for i in range(65,65+7):
         alphabet.append(chr(i))
     transitions = { # sparse transition matrix (any "unused" probability density will be distributed among remaining classes)
-        'A':{'B':0.95, 'A':0.05},
-        'B':{'C':0.95, 'A':0.025},
-        'C':{'D':0.95},
-        'D':{'E':0.95}
+        'A':{'B':0.5},
+        'B':{'C':0.5},
+        'C':{'D':0.5},
+        'D':{'E':0.5}
     }
     generator = ConformationGenerator_TransitionMatrix(alphabet, transitions)
     print(generator.generate(100))
-    generator.generate_and_write(10**5, 'simulation_mixed1.txt')
+    generator.generate_and_write(10**5, 'sim_ABCDE.txt')
     return
 
 if __name__ == '__main__':
     main()
+
