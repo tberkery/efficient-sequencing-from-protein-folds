@@ -21,6 +21,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from main_method.compress_runs import compress_runs
 from main_method.propose_paths import query_seq
 from BWT_HMM.bwthmm import bwt_hmm
+from BWT_HMM_Merging.bwthmm_merging import bwt_hmm_with_merge
 
 user = "Tad Berkery" # specify who you are so we now whose computer the profiling corresponds to
 
@@ -49,13 +50,17 @@ def make_proposals_mlse(seq, num_proposals=10, max_path_len=10, sep='_'):
     len_seq = len(seq)
     query_seq(seq, len_seq, num_proposals, max_path_len, sep=sep, threshold=0.01, verbose=False)
 
+@profile
+def bwt_hmm_with_merging_strategy(seq):
+    bwt_hmm_with_merge(seq)
+
 # It is highly recommended that you make sure any data structure functions you call don't print anything to output. Otherwise, it will be hard to read space complexity info printed by memory_profiler to stdout.
 
-ds_functions = [bwt_hmm_with_space_annotation, make_proposals_mlse] # add any functions for data structures you wish to benchmark (make sure you have made a copy and used the @profile annotation for memory_profiler space complexity anlaysis.)
+ds_functions = [bwt_hmm_with_space_annotation, make_proposals_mlse, bwt_hmm_with_merging_strategy] # add any functions for data structures you wish to benchmark (make sure you have made a copy and used the @profile annotation for memory_profiler space complexity anlaysis.)
 sample_functions = [get_sample_sequence, get_smaller_sequence] # now define any functions that will provide samples you wish to profile
 
 sample_function_descriptors = ["hypothetical_protein_test", "compressed_hypothetical_protein_test"] # write appropriate names describing example sequences to test here
-data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi"] # write appropriate names describing data structures to profile here
+data_structure_descriptors = ["BWT-HMM", "MLSE-Viterbi", "BWT-HMM-Merging"] # write appropriate names describing data structures to profile here
 num_iterations = 1 # set number of times to run each unique sample sequence/data structure combination
 
 results = pd.DataFrame(columns = ["data_structure", "sample", "iteration", "user", "runtime"])
@@ -77,4 +82,4 @@ for func in sample_functions:
         ds_counter += 1
     sample_counter += 1
 
-results.to_csv("benchmarking_results.csv", index = False)
+results.to_csv("benchmarking_results_with_merging.csv", index = False)

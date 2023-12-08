@@ -1,0 +1,11 @@
+Data structure:  BWT-HMM , Sample:  hypothetical_protein_test , Iteration  0
+Filename: C:\Users\Tad\Documents\protein-fold-pipeline\benchmark\profile.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    44    144.7 MiB    144.7 MiB           1   @profile
+    45                                         def bwt_hmm_with_space_annotation(seq):
+    46    160.2 MiB     15.5 MiB           1       bwt_hmm(seq)
+
+
+Data structure:  MLSE-Viterbi , Sample:  hypothetical_protein_test , Iteration  0
