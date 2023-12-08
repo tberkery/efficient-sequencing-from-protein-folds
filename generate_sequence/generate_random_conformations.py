@@ -63,7 +63,7 @@ ConformationGenerator
 Make a random sequence of conformations within a designated alphabet. 
 
 """
-class ConformationGenerator:
+class ConformationGenerator_TransitionMatrix:
     """
     alphabet: Set: a list of possible characters
 
@@ -88,6 +88,7 @@ class ConformationGenerator:
         if transitions is None:
             self.transitions_cdf = None
         else:
+            # transition probabilities
             for key in self.alphabet:
                 p_uniform = 1/self.len_alphabet
                 self.transitions_cdf[key] = list() # sorted list of cumulative probabilities
@@ -168,18 +169,32 @@ class ConformationGenerator:
                     fh.write(str(prev))
         return
 
+class ConformationGenerator_Patterns:
+    def __init__(self, alphabet, transitions, patterns=[], seed=None, alpha=0.01):
+        self.alphabet = sorted(list(set(alphabet)))
+        self.len_alphabet = len(self.alphabet)
+
+        self.seed = seed
+        if self.seed is None:
+            self.seed = self.sample()
+        if self.seed not in self.alphabet:
+            raise ValueError("Invalid seed")
+        
+        self.patterns = patterns
 
 def main():
-    alphabet = {1,2,3,4,5}
+    alphabet = []
+    for i in range(65,65+25):
+        alphabet.append(chr(i))
     transitions = { # sparse transition matrix (any "unused" probability density will be distributed among remaining classes)
-        1:{2:0.95, 1:0.05},
-        2:{3:0.95, 1:0.025},
-        3:{4:0.95},
-        4:{5:0.95}
+        'A':{'B':0.95, 'A':0.05},
+        'B':{'C':0.95, 'A':0.025},
+        'C':{'D':0.95},
+        'D':{'E':0.95}
     }
-    generator = ConformationGenerator(alphabet, transitions)
+    generator = ConformationGenerator_TransitionMatrix(alphabet, transitions)
     print(generator.generate(100))
-    generator.generate_and_write(10**5, 'simulation.txt')
+    generator.generate_and_write(10**5, 'simulation_mixed1.txt')
     return
 
 if __name__ == '__main__':
