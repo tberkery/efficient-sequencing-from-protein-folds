@@ -32,7 +32,7 @@ def get_sample_sequence():
         for line in fp.readlines():
             seq += line.rstrip("\n")
     # when running on test.txt sequence input, gets killed on Amazon EC2 t3.2xlarge instance
-    seq = seq[0:500000] # try on just first 100,000 characters to see if we can benchmark
+    seq = seq[0:100000] # try on just first 100,000 characters to see if we can benchmark
     return seq
 
 def get_smaller_sequence():
