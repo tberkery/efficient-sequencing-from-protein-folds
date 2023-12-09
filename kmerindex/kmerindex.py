@@ -4,17 +4,19 @@ inputName = "../generate_sequence/simulation.txt" #"compressed_MDseq.txt"
 #k = 7
 outputName = "output.txt"
 
+with open(inputName, 'r') as ifile:
+    lines = ifile.readlines()
 
-def kmerindex(inputName, kmin, kmax):
-    # Read the sequence into a list then convert to string
-    with open(inputName, 'r') as ifile:
-        lines = ifile.readlines()
+# Process sequence
+sequence = ''
+for i in range(len(lines)):
+    sequence = sequence + lines[i].strip()
 
-    # Process sequence
-    sequence = ''
-    for i in range(len(lines)):
-        sequence = sequence + lines[i].strip()
 
+'''
+Takes a sequence and outputs the 10 best matching kmers with all ks between kmin and kmax
+'''
+def kmerindex(sequence, kmin, kmax):
     
     # Records all kmers with their occurances in the form (occurance * length, kmer)
     commonkmers = []
@@ -40,5 +42,7 @@ def kmerindex(inputName, kmin, kmax):
     return commonkmers[:10]
 
 
-bestkmers = kmerindex("../generate_sequence/simulation.txt", kmin=5, kmax=15)
-print(bestkmers)
+bestkmers = kmerindex(sequence, kmin=5, kmax=10)
+
+for pair in bestkmers:
+    print("Sequence: {}, Occurance: {}".format(pair[1], int(pair[0] / len(pair[1]))))
