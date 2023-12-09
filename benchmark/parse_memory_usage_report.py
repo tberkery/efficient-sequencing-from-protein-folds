@@ -3,11 +3,13 @@ import pandas as pd
 mem_usage_report_file = sys.argv[1]
 use_next = False
 df = pd.DataFrame(columns = ["data_structure", "sample", "memory_usage"])
-data_structure_names = ["BWT-HMM", "BWT-HMM", "MLSE-Viterbi", "MLSE-Viterbi", "BWT-HMM-Merging", "BWT-HMM-Merging"]
-sample_names = ["hypothetical_protein_test", "compressed_hypothetical_protein_test", "hypothetical_protein_test", "compressed_hypothetical_protein_test", "hypothetical_protein_test", "compressed_hypothetical_protein_test"]
+data_structure_names = ["BWT-HMM", "BWT-HMM", "MLSE-Viterbi", "MLSE-Viterbi", "BWT-HMM-Merging", "BWT-HMM-Merging", "Kmer Index", "Kmer Index"]
+sample_names = ["hypothetical_protein_test", "compressed_hypothetical_protein_test", "hypothetical_protein_test", "compressed_hypothetical_protein_test", "hypothetical_protein_test", "compressed_hypothetical_protein_test", "hypothetical_protein_test", "compressed_hypothetical_protein_test"]
 i = 0
 with open(mem_usage_report_file, "r") as fp:
     for line in fp.readlines():
+        if not line.strip():
+            continue
         if use_next:
             if local_count == 2:
                 line_split = line.split("    ") # this is not a tab, but rather a copy of a specific number of spaces
@@ -27,7 +29,7 @@ with open(mem_usage_report_file, "r") as fp:
             else:
                 local_count += 1
  
-        if line[0:1] == "=":
+        if line[0:5] == "=====":
             use_next = True
             local_count = 0
 
