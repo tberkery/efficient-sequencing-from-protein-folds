@@ -27,6 +27,7 @@ At this point, the memory usage is in the `memory_usage_updated.csv` file in an 
 * The "kmerindex" directory contains code that we used at times to contextualize how different architectures fare in relation to a generic, typical kmer index. We used this in some benchmarking analyses performed in the "experimentation" branch of the repo but chose to stop shot of including all of it in "main".
 * In general here, "architecture" (typically in the README) and "data structure" (typically in the code) are used relatively interchangeably and generally refer to the same thing.
 * There is an "experimentation" branch we intentionally have not merged with "main".
+* Link to public GitHub for this project: [https://github.com/tberkery/protein-fold-pipeline](https://github.com/tberkery/protein-fold-pipeline)
   
 # List of Python Package Dependencies
 (beyond standard packages)
