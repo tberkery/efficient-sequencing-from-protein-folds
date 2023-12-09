@@ -16,7 +16,7 @@ for i in range(len(lines)):
 '''
 Takes a sequence and outputs the 10 best matching kmers with all ks between kmin and kmax
 '''
-def kmerindex(sequence, kmin=5, kmax=10):
+def kmerindex(sequence, kmin=5, kmax=6):
     
     # Records all kmers with their occurances in the form (occurance * length, kmer)
     commonkmers = []
@@ -42,7 +42,7 @@ def kmerindex(sequence, kmin=5, kmax=10):
     return commonkmers[:10]
 
 
-bestkmers = kmerindex(sequence, kmin=5, kmax=10)
+bestkmers = kmerindex(sequence, kmin=5, kmax=6)
 
 for pair in bestkmers:
     print("Sequence: {}, Occurance: {}".format(pair[1], int(pair[0] / len(pair[1]))))
