@@ -1,27 +1,15 @@
-# genomics-sequences-final-project
-Final project for Computational Genomics: Sequences
+# Introduction
+This repository corresponds to our final project for Computational Genomics: Sequences. The team consists of Tad Berkery, Xinlei (Lily) Chen, Richard Hu, and Yuseong (Nick) Oh. We outline in our report our review of prior work, methodologies, and results. What follows are some auxiliary instructions to complement this on how to run our code with the goal of aiding with reproducibility.
 
-test sequences: https://drive.google.com/drive/folders/1RavGzAAF8eBSy4HMB-JbUeWhOO3oZMbM?usp=sharing 
+# Protein Fold Clustering
+A key source of inspirating for this project is code that generates a sequence of numbers indicating clusters representing protein folds. This code is written in MatLab and is primarily contained in the "msm_code_Richard", "clustering_code", "Lagnevin_clustering" and "Langevin dynamics code" subfolders. This code is notably outside the scope of our project and comes from a biophysics class taken by Richard and Lily. This code is what produced the file text.txt within the BWT_HMM subfolder, which is a sequence of 1,000,000 numbers representing cluster assignments at each position. We included this code for comprehensiveness, but, in relation to reproducing this project, the code associated with our deliverables begins at the level of treating this sequence file as already existent and working from there. We then created the "generate_sequence" directory and code inside it to provide a mechanism for generating additional such sequences.
 
-Live goals
-1. What are the common folding paths; querying them, counts, etc.?
-    a. Find kth order probabilities, build HMM/Viterbi? Wheeler-HMM variation of BWT-HMM?
-    b. Use data structure in (1) to "propose" favorable paths of protein folding
-    c. Query folding paths against live sequence
-    d. Kinetics of a folding path (number of runs, RSA, etc.)
-    d. Sequence of folding paths? Longest common substring?
-2. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation).
+# Several Algorithms
+With the above context, we then proceeded to implement several architectures, headlined by the Burrows-Wheeler-Transform Hidden-Markov-Model (BWT-HMM folder), Burrows-Wheeler-Transform Hidden-Markov-Model with merging (BWT-HMM_Merging folder), and MLSE Viterbi, which is spread across the "Compress_sequence" and "main_method" subdirectories. The best way to see our underlying implementations is to look at the code in these directories. The code in these directories is a mix of code that can be executed by running a given script and code that works together across many scripts.
 
-Good article on viterbi: https://www.sciencedirect.com/topics/mathematics/viterbi-algorithm#:~:text=A%20Viterbi%20algorithm%20is%20a,Technology%20(Third%20Edition)%2C%202003
+# Benchmarking
+A key deliverable for our project beyond any 
 
-
-TODO:
-1. Try existing: BWT-HMM --> produce the index, run some queries? Also, analyze time and space
-2. Viterbi (existing; also look at implementation into Viterbi design or Wheeler)? --> Make the algorithm and explain it in clear slides; analysis of time and space and why it is better for our sequence
-3. Check "equilibrium" (kth order probabilities remain consistent at different points of simulation). Rank-select-access (but how do we improve on existing?)
-4. nothing worked and we try some of the small points in "Live goals"
-
-
-TODO Task 2 (Viterbi, Lily and Richard):
-1. quick generic program to compress and track runs (AAAABBCCC --> text is 'ABC', runs = [4, 2, 3]): Lily
-2. MLSD Viterbi idea (our new-ish method) to propose the folding paths (queries): Richard
+# Miscellaneous
+* For the code in the "BWT_HMM" and "BWT_HMM_Merging" directories, much of the Python code (such as `bwthmm.py`) relies on the [`hmmlearn`](https://pypi.org/project/hmmlearn/) package. This package proved to be quite difficult to install on several occasions, perhaps likely because it is self-described by its creators as being "under limited-maintenance mode." If you have issues with it, please ensure that you have Python >= 3.6, NumPy >= 1.10, and scikit-learn >= 0.16. Of note, `hmmlearn` is a direct offshoot of the origin scikit-learn hidden markov model package, which is now deprecated "due to it no longer matching the scope and the API of the project" and "scheduled for removal in the 0.17 release of the project". scikit-learn recommends using hmmlearn as we did, and we did not want our code to depend on a package set to soon go out of existence, so we used hmmlearn and endured its often painful installation difficulties. If this poses issues on a Mac, try [here](https://github.com/hmmlearn/hmmlearn/issues/475). If this poses issues on a PC, try [here](https://stackoverflow.com/questions/51002441/unable-to-install-hmmlearn-in-python-3).
+* The "kmerindex" directory contains code that we used at times to contextualize how different architectures fare in relation to a generic, typical kmer index.
