@@ -28,7 +28,9 @@ done`
 
 To execute `run.sh`, you will need to be in an appropriate environment for running bash/shell scripts. Tad designed this benchmarking suite and is a Windows PC user. For him, typing the command `./run.sh` in a generic windows terminal did not result in an error but did not result in the script's execution because this was not a valid place designed to run this type of script. He installed Git Bash (if needed, see a tutorial on how to this [here](https://www.educative.io/answers/how-to-install-git-bash-in-windows)). He would open git bash, navigate to the appropriate directory (for Tad, ths involved going `cd Documents/protein-fold-pipeline`) and would then execute `./run.sh` and have the script run successfully.
 
-Because our 
+Note that in `profile.py` (which is executed by `run.sh`) the runtime benchmarking is completed by using the `time` library and noting the elapsed time for each architecture-sequence combination in a pandas dataframe that becomes, in the case of the current scripts, `benchmarking_results_updated.csv`. The tracking of memory usage is performed via the `@profile` annotations above the `bwt_hmm_with_space_annotation`, `make_proposals_mlse`, and `bwt_hmm_with_merging_strategy` wrapper functions, which invoke the `memory_profiler` library. `memory_profiler` prints memory usage as if it came out of print statements, which will result in the memory usage estimates emerging in a pretty-to-the-eye but rather complicated-from-a-coding-perspective format and will not automatically be stored in `space_complexity_info_updated.txt`. Once `run.sh` finishes executing the Git Bash window, copy all of the output it displayed manually and paste it in `space_complexity_info_updated.txt`. Then, in the command line (either in Git Bash or in a normal terminal window, either is fine), run `python benchmark/parse_memory_usage_report.py space_complexity_info_updated.txt`. The `parse_memory_usage_report.py` script is complex script that pulls the memory usage estimates out of this elaborate format printed by the `memory_profiler` package. 
+
+At this point, the memory 
 
 
 # Miscellaneous
